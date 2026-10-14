@@ -3,28 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#FBF8F6">
+<meta name="theme-color" content="#F8F5FC">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="仙女旅遊">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>仙女獎勵旅遊業績登機證</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: one narrow column; a boarding pass hero carries the goal, then order entry, sprint calculator, order log by month */
 :root{
-  --bg:#FBF8F6; --surface:#FFFFFF; --ink:#3E3431; --muted:#8A7C77;
-  --rose:#B5786A; --rose-soft:#F3E3DD; --champ:#CDB993; --line:#EADFDA;
+  --bg:#F8F5FC; --surface:#FFFFFF; --ink:#3D3348; --muted:#867B93;
+  --rose:#8A6BC0; --rose-soft:#EEE6F8; --champ:#C9A15E; --line:#E6DEF0;
   --good:#5E8B6F; --warn:#B98A3E;
   --display:"Noto Serif TC","Songti TC",serif;
   --body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#1C1817; --surface:#272120; --ink:#F2E9E5; --muted:#B3A49F;
-  --rose:#DDA392; --rose-soft:#3D2E2A; --champ:#BFAA82; --line:#3A302D;
+  --bg:#1B1722; --surface:#26202F; --ink:#F1EAF7; --muted:#ADA2BB;
+  --rose:#C3A8EE; --rose-soft:#352B45; --champ:#D8B676; --line:#3A3147;
   --good:#8FBF9F; --warn:#D9AE63; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#1C1817; --surface:#272120; --ink:#F2E9E5; --muted:#B3A49F;
-  --rose:#DDA392; --rose-soft:#3D2E2A; --champ:#BFAA82; --line:#3A302D;
+  --bg:#1B1722; --surface:#26202F; --ink:#F1EAF7; --muted:#ADA2BB;
+  --rose:#C3A8EE; --rose-soft:#352B45; --champ:#D8B676; --line:#3A3147;
   --good:#8FBF9F; --warn:#D9AE63; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -38,6 +45,9 @@ h2{font-size:17px}
 .muted{color:var(--muted)}
 header{display:grid;gap:4px}
 header p{margin:0;font-size:13px;color:var(--muted)}
+.brand{grid-template-columns:auto 1fr;align-items:center;gap:14px}
+.brand img{width:84px;height:84px;border-radius:20px;box-shadow:0 4px 16px rgba(138,107,192,.25);display:block}
+.brand-t{display:grid;gap:4px;min-width:0}
 
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:14px}
 label{font-size:12px;color:var(--muted);display:grid;gap:4px}
@@ -124,10 +134,13 @@ footer{text-align:center;font-size:12px;color:var(--muted)}
 <body>
 
 <div class="wrap">
-  <header>
-    <div class="eyebrow">Fairy Team · 2027 Reward Trip</div>
-    <h1>仙女獎勵旅遊業績登機證</h1>
-    <p>競賽期間 2026/10/1 – 2027/2/15 23:59，與公司 2027 海外獎勵旅遊競賽同步</p>
+  <header class="brand">
+    <img src="logo.png" alt="Fairy Trip 仙女獎勵旅遊" width="84" height="84">
+    <div class="brand-t">
+      <div class="eyebrow">Fairy Trip · 2027 Reward Trip</div>
+      <h1>仙女獎勵旅遊業績登機證</h1>
+      <p>競賽期間 2026/10/1 – 2027/2/15 23:59，與公司 2027 海外獎勵旅遊競賽同步</p>
+    </div>
   </header>
 
   <div id="demoNote" class="notice demo" hidden>
